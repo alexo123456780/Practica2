@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Producto - Material Design</title>
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Google Fonts - Roboto (tipografía oficial de Material Design) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">
+        <i class="material-icons" style="vertical-align: middle;">shopping_cart</i>
+        Material Store
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#"><i class="material-icons">search</i></a></li>
+        <li><a href="#"><i class="material-icons">favorite</i></a></li>
+        <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="section-title">Productos Destacados</h1>
+
+    <div class="row">
+
+      <!-- ===== PRODUCTO 1: Laptop ===== -->
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <!-- Botón de favoritos -->
+            <div class="favorite-btn" onclick="toggleFavorite(this)">
+              <i class="material-icons">favorite_border</i>
+            </div>
+
+            <!-- Badge de precio -->
+            <div class="price-badge">$999</div>
+
+            <!-- Imagen del producto -->
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop" alt="Laptop Pro">
+            <span class="card-title">Laptop Pro 2025</span>
+          </div>
+
+          <div class="card-content">
+            <p>Potente laptop con procesador de última generación, 16GB RAM y SSD de 512GB. Perfecta para profesionales.</p>
+
+            <div class="product-features">
+              <span class="feature-chip">Intel i7</span>
+              <span class="feature-chip">16GB RAM</span>
+              <span class="feature-chip">512GB SSD</span>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <!-- Control de cantidad -->
+            <div class="quantity-control">
+              <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+              <span class="quantity-display">1</span>
+              <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <!-- Botón agregar al carrito -->
+            <a class="waves-effect waves-light btn btn-add-cart" onclick="addToCart(this, 'Laptop Pro 2025', 999)">
+              <i class="material-icons left">add_shopping_cart</i>Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRODUCTO 2: Smartphone ===== -->
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">
+              <i class="material-icons">favorite_border</i>
+            </div>
+
+            <div class="price-badge">$799</div>
+
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop" alt="Smartphone">
+            <span class="card-title">Smartphone Ultra</span>
+          </div>
+
+          <div class="card-content">
+            <p>Smartphone con cámara de 108MP, pantalla AMOLED de 6.7" y batería de larga duración. Tu compañero ideal.</p>
+
+            <div class="product-features">
+              <span class="feature-chip">108MP</span>
+              <span class="feature-chip">AMOLED</span>
+              <span class="feature-chip">5000mAh</span>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <div class="quantity-control">
+              <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+              <span class="quantity-display">1</span>
+              <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <a class="waves-effect waves-light btn btn-add-cart" onclick="addToCart(this, 'Smartphone Ultra', 799)">
+              <i class="material-icons left">add_shopping_cart</i>Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRODUCTO 3: Audífonos ===== -->
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">
+              <i class="material-icons">favorite_border</i>
+            </div>
+
+            <div class="price-badge">$299</div>
+
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop" alt="Audífonos">
+            <span class="card-title">Audífonos Pro</span>
+          </div>
+
+          <div class="card-content">
+            <p>Audífonos con cancelación de ruido activa, sonido Hi-Fi y 30 horas de batería. Calidad premium.</p>
+
+            <div class="product-features">
+              <span class="feature-chip">ANC</span>
+              <span class="feature-chip">Hi-Fi</span>
+              <span class="feature-chip">30h batería</span>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <div class="quantity-control">
+              <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+              <span class="quantity-display">1</span>
+              <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <a class="waves-effect waves-light btn btn-add-cart" onclick="addToCart(this, 'Audífonos Pro', 299)">
+              <i class="material-icons left">add_shopping_cart</i>Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PRODUCTO 4: Smartwatch ===== -->
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <div class="favorite-btn" onclick="toggleFavorite(this)">
+              <i class="material-icons">favorite_border</i>
+            </div>
+
+            <div class="price-badge">$399</div>
+
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=400&fit=crop" alt="Smartwatch">
+            <span class="card-title">Smartwatch Elite</span>
+          </div>
+
+          <div class="card-content">
+            <p>Reloj inteligente con monitoreo de salud 24/7, GPS integrado y resistencia al agua. Estilo y función.</p>
+
+            <div class="product-features">
+              <span class="feature-chip">GPS</span>
+              <span class="feature-chip">IP68</span>
+              <span class="feature-chip">Monitor salud</span>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <div class="quantity-control">
+              <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+              <span class="quantity-display">1</span>
+              <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <a class="waves-effect waves-light btn btn-add-cart" onclick="addToCart(this, 'Smartwatch Elite', 399)">
+              <i class="material-icons left">add_shopping_cart</i>Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+
+
+
+</body>
+</html>

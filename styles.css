@@ -1,0 +1,279 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding-bottom: 50px;
+    }
+
+    nav {
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #6200ea !important; /* Purple Material Design */
+    }
+
+    nav .brand-logo {
+      font-weight: 500;
+      padding-left: 20px;
+    }
+
+    .container {
+      margin-top: 40px;
+    }
+
+    .section-title {
+      color: white;
+      font-weight: 300;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .card {
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      /* Sombra característica de Material Design (elevación 2dp) */
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+                  0 3px 1px -2px rgba(0,0,0,0.12),
+                  0 1px 5px 0 rgba(0,0,0,0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),
+                  0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+
+    .card-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-image img {
+      transform: scale(1.05);
+    }
+
+    .card-title {
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      padding: 24px !important;
+      font-weight: 500 !important;
+      font-size: 1.5rem !important;
+    }
+
+    /* Badge de precio */
+    .price-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ff6f00; /* Deep Orange Material Design */
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    /* Botón de favoritos */
+    .favorite-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: white;
+      color: #e91e63; /* Pink Material Design */
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    .favorite-btn:hover {
+      transform: scale(1.1);
+      background: #e91e63;
+      color: white;
+    }
+
+    .favorite-btn.active {
+      background: #e91e63;
+      color: white;
+      animation: heartBeat 0.3s ease;
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .card-content {
+      padding: 20px !important;
+    }
+
+    .card-content p {
+      color: #616161; /* Grey 700 Material Design */
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .product-features {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .feature-chip {
+      background: #e3f2fd; /* Blue 50 Material Design */
+      color: #1976d2; /* Blue 700 Material Design */
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* ===== ACCIONES DE LA TARJETA ===== */
+    .card-action {
+      padding: 16px 20px !important;
+      background: #fafafa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Contador de cantidad */
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border-radius: 25px;
+      padding: 5px 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+
+    .quantity-btn {
+      background: #6200ea;
+      color: white;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      font-size: 18px;
+    }
+
+    .quantity-btn:hover {
+      background: #3700b3;
+      transform: scale(1.1);
+    }
+
+    .quantity-display {
+      min-width: 30px;
+      text-align: center;
+      font-weight: 500;
+      color: #6200ea;
+    }
+
+    /* Botón principal */
+    .btn-add-cart {
+      background: #6200ea !important;
+      border-radius: 25px !important;
+      padding: 0 20px !important;
+      font-weight: 500 !important;
+      text-transform: none !important;
+      box-shadow: 0 2px 5px rgba(98,0,234,0.3) !important;
+      transition: all 0.3s ease !important;
+      white-space: nowrap;
+      flex: 1 1 auto;
+      min-width: 120px;
+      max-width: 160px;
+      height: 36px;
+      line-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-add-cart:hover {
+      background: #3700b3 !important;
+      box-shadow: 0 4px 8px rgba(98,0,234,0.4) !important;
+      transform: translateY(-2px);
+    }
+
+    .btn-add-cart i {
+      margin-right: 5px;
+    }
+
+
+    /* Tablets y pantallas medianas */
+    @media only screen and (max-width: 992px) {
+      .btn-add-cart {
+        min-width: 110px;
+        max-width: 140px;
+        font-size: 0.9rem;
+        padding: 0 15px !important;
+      }
+    }
+
+    /* Móviles */
+    @media only screen and (max-width: 600px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .card-action {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .btn-add-cart {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: auto !important;
+      }
+
+      .quantity-control {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    #toast-container {
+      top: auto !important;
+      right: auto !important;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .toast {
+      border-radius: 25px !important;
+      font-weight: 500 !important;
+    }
