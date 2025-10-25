@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarjeta de Producto - Material Design</title>
+  <title>Armix - Soluciones Integrales | Material Design</title>
 
   <!-- Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -19,190 +19,125 @@
 </head>
 <body>
 
-  <nav>
+  <!-- Navigation Bar Armix -->
+  <nav class="armix-nav">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">
-        <i class="material-icons" style="vertical-align: middle;">shopping_cart</i>
-        Material Store
+        <i class="material-icons" style="vertical-align: middle;">analytics</i>
+        Armix
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#"><i class="material-icons">search</i></a></li>
-        <li><a href="#"><i class="material-icons">favorite</i></a></li>
-        <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
+        <li><a href="#"><i class="material-icons">account_circle</i></a></li>
+        <li><a href="#"><i class="material-icons">menu</i></a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
-    <h1 class="section-title">Productos Destacados</h1>
+    <h1 class="section-title">Soluciones Integrales</h1>
+    <p class="section-subtitle">Tecnología e Infraestructura que Impulsa tu Estrategia Publicitaria</p>
 
     <div class="row">
+      <div class="col s12 m10 offset-m1 l8 offset-l2">
+        <div class="card armix-card">
 
-      <!-- ===== PRODUCTO 1: Laptop ===== -->
-      <div class="col s12 m6 l3">
-        <div class="card">
           <div class="card-image">
-            <!-- Botón de favoritos -->
+            <div class="category-badge">
+              <i class="material-icons tiny">star</i>
+              ARMIX
+            </div>
+
             <div class="favorite-btn" onclick="toggleFavorite(this)">
               <i class="material-icons">favorite_border</i>
             </div>
 
-            <!-- Badge de precio -->
-            <div class="price-badge">$999</div>
-
-            <!-- Imagen del producto -->
-            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop" alt="Laptop Pro">
-            <span class="card-title">Laptop Pro 2025</span>
+            <img src="/image/logo.png" alt="Soluciones Armix">
+            <span class="card-title">Armix</span>
           </div>
 
+          <!-- Contenido de la Tarjeta -->
           <div class="card-content">
-            <p>Potente laptop con procesador de última generación, 16GB RAM y SSD de 512GB. Perfecta para profesionales.</p>
+            <h5 class="product-name">Soluciones Integrales de Infraestructura y Publicidad</h5>
 
+            <p class="product-description">
+              Armix es tu proveedor de soluciones integrales que une la infraestructura tecnológica
+              con la estrategia publicitaria. No somos solo una empresa de tecnología ni únicamente
+              una agencia de publicidad. Ofrecemos una combinación perfecta de ambos mundos para
+              impulsar tu negocio al siguiente nivel.
+            </p>
+
+            <!-- Características del Producto -->
             <div class="product-features">
-              <span class="feature-chip">Intel i7</span>
-              <span class="feature-chip">16GB RAM</span>
-              <span class="feature-chip">512GB SSD</span>
+              <div class="feature-item">
+                <i class="material-icons">cloud</i>
+                <span>Infraestructura Cloud</span>
+              </div>
+              <div class="feature-item">
+                <i class="material-icons">campaign</i>
+                <span>Estrategia Publicitaria</span>
+              </div>
+              <div class="feature-item">
+                <i class="material-icons">analytics</i>
+                <span>Análisis de Datos</span>
+              </div>
+              <div class="feature-item">
+                <i class="material-icons">security</i>
+                <span>Seguridad Avanzada</span>
+              </div>
             </div>
-          </div>
-
+          <!-- Acciones de la Tarjeta -->
           <div class="card-action">
-            <!-- Control de cantidad -->
-            <div class="quantity-control">
-              <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
-              <span class="quantity-display">1</span>
-              <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+            <!-- Botones principales -->
+            <div class="action-buttons">
+              <a class="waves-effect waves-light btn btn-primary" onclick="showContactModal()">
+                <i class="material-icons left">phone</i>Contactar
+              </a>
+              <a class="waves-effect waves-light btn btn-secondary" onclick="showMoreInfo()">
+                <i class="material-icons left">info</i>Ver Más
+              </a>
             </div>
 
-            <!-- Botón agregar al carrito -->
-            <a class="waves-effect waves-light btn btn-add-cart" onclick="addToCart(this, 'Laptop Pro 2025', 999)">
-              <i class="material-icons left">add_shopping_cart</i>Agregar
-            </a>
+            <div class="additional-links">
+              <a href="#" class="link-text" onclick="showDemo(event)">
+                <i class="material-icons tiny">play_circle_outline</i>
+                Solicitar Demo Gratuita
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
+    </div>
 
-      <!-- ===== PRODUCTO 2: Smartphone ===== -->
-      <div class="col s12 m6 l3">
-        <div class="card">
-          <div class="card-image">
-            <div class="favorite-btn" onclick="toggleFavorite(this)">
-              <i class="material-icons">favorite_border</i>
-            </div>
-
-            <div class="price-badge">$799</div>
-
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop" alt="Smartphone">
-            <span class="card-title">Smartphone Ultra</span>
-          </div>
-
-          <div class="card-content">
-            <p>Smartphone con cámara de 108MP, pantalla AMOLED de 6.7" y batería de larga duración. Tu compañero ideal.</p>
-
-            <div class="product-features">
-              <span class="feature-chip">108MP</span>
-              <span class="feature-chip">AMOLED</span>
-              <span class="feature-chip">5000mAh</span>
-            </div>
-          </div>
-
-          <div class="card-action">
-            <div class="quantity-control">
-              <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
-              <span class="quantity-display">1</span>
-              <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
-            </div>
-
-            <a class="waves-effect waves-light btn btn-add-cart" onclick="addToCart(this, 'Smartphone Ultra', 799)">
-              <i class="material-icons left">add_shopping_cart</i>Agregar
-            </a>
-          </div>
+    <div class="row info-cards">
+      <div class="col s12 m4">
+        <div class="info-card">
+          <i class="material-icons large">speed</i>
+          <h6>Alto Rendimiento</h6>
+          <p>Infraestructura optimizada para máxima velocidad</p>
         </div>
       </div>
-
-      <!-- ===== PRODUCTO 3: Audífonos ===== -->
-      <div class="col s12 m6 l3">
-        <div class="card">
-          <div class="card-image">
-            <div class="favorite-btn" onclick="toggleFavorite(this)">
-              <i class="material-icons">favorite_border</i>
-            </div>
-
-            <div class="price-badge">$299</div>
-
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop" alt="Audífonos">
-            <span class="card-title">Audífonos Pro</span>
-          </div>
-
-          <div class="card-content">
-            <p>Audífonos con cancelación de ruido activa, sonido Hi-Fi y 30 horas de batería. Calidad premium.</p>
-
-            <div class="product-features">
-              <span class="feature-chip">ANC</span>
-              <span class="feature-chip">Hi-Fi</span>
-              <span class="feature-chip">30h batería</span>
-            </div>
-          </div>
-
-          <div class="card-action">
-            <div class="quantity-control">
-              <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
-              <span class="quantity-display">1</span>
-              <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
-            </div>
-
-            <a class="waves-effect waves-light btn btn-add-cart" onclick="addToCart(this, 'Audífonos Pro', 299)">
-              <i class="material-icons left">add_shopping_cart</i>Agregar
-            </a>
-          </div>
+      <div class="col s12 m4">
+        <div class="info-card">
+          <i class="material-icons large">support_agent</i>
+          <h6>Soporte 24/7</h6>
+          <p>Equipo dedicado siempre disponible</p>
         </div>
       </div>
-
-      <!-- ===== PRODUCTO 4: Smartwatch ===== -->
-      <div class="col s12 m6 l3">
-        <div class="card">
-          <div class="card-image">
-            <div class="favorite-btn" onclick="toggleFavorite(this)">
-              <i class="material-icons">favorite_border</i>
-            </div>
-
-            <div class="price-badge">$399</div>
-
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=400&fit=crop" alt="Smartwatch">
-            <span class="card-title">Smartwatch Elite</span>
-          </div>
-
-          <div class="card-content">
-            <p>Reloj inteligente con monitoreo de salud 24/7, GPS integrado y resistencia al agua. Estilo y función.</p>
-
-            <div class="product-features">
-              <span class="feature-chip">GPS</span>
-              <span class="feature-chip">IP68</span>
-              <span class="feature-chip">Monitor salud</span>
-            </div>
-          </div>
-
-          <div class="card-action">
-            <div class="quantity-control">
-              <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
-              <span class="quantity-display">1</span>
-              <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
-            </div>
-
-            <a class="waves-effect waves-light btn btn-add-cart" onclick="addToCart(this, 'Smartwatch Elite', 399)">
-              <i class="material-icons left">add_shopping_cart</i>Agregar
-            </a>
-          </div>
+      <div class="col s12 m4">
+        <div class="info-card">
+          <i class="material-icons large">trending_up</i>
+          <h6>Resultados Medibles</h6>
+          <p>Analytics en tiempo real de tus campañas</p>
         </div>
       </div>
-
     </div>
   </div>
 
   <!-- Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
-
-
 
 </body>
 </html>

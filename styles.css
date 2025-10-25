@@ -1,279 +1,590 @@
- * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+:root {
+  /* Primary Palette */
+  --armix-primary: #3862F6;
+  --armix-on-primary: #FFFFFF;
+  --armix-primary-container: #DDE1FF;
+  --armix-on-primary-container: #001258;
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding-bottom: 50px;
-    }
+  /* Secondary Palette */
+  --armix-secondary: #00B4D8;
+  --armix-on-secondary: #FFFFFF;
+  --armix-secondary-container: #BFE9FF;
+  --armix-on-secondary-container: #001F2A;
 
-    nav {
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      background: #6200ea !important; /* Purple Material Design */
-    }
+  /* Tertiary Palette */
+  --armix-tertiary: #8B5CF6;
+  --armix-on-tertiary: #FFFFFF;
+  --armix-tertiary-container: #EBDDFF;
+  --armix-on-tertiary-container: #2A0845;
 
-    nav .brand-logo {
-      font-weight: 500;
-      padding-left: 20px;
-    }
+  /* Error/Warning Palette */
+  --armix-error: #F59E0B;
+  --armix-on-error: #FFFFFF;
+  --armix-error-container: #FFEDCC;
+  --armix-on-error-container: #3D2E00;
 
-    .container {
-      margin-top: 40px;
-    }
+  /* Success Palette */
+  --armix-success: #10B981;
+  --armix-on-success: #FFFFFF;
+  --armix-success-container: #A7F3D0;
+  --armix-on-success-container: #002114;
 
-    .section-title {
-      color: white;
-      font-weight: 300;
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
+  /* Surface Colors */
+  --armix-surface: #FEFBFF;
+  --armix-on-surface: #1B1B1F;
+  --armix-surface-variant: #E4E1EC;
+  --armix-on-surface-variant: #46464F;
 
-    .card {
-      border-radius: 8px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      margin-bottom: 30px;
-      /* Sombra característica de Material Design (elevación 2dp) */
-      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
-                  0 3px 1px -2px rgba(0,0,0,0.12),
-                  0 1px 5px 0 rgba(0,0,0,0.2);
-    }
+  /* Background */
+  --armix-background: #FEFBFF;
+  --armix-on-background: #1B1B1F;
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),
-                  0 6px 20px 0 rgba(0,0,0,0.19);
-    }
+  /* Outline */
+  --armix-outline: #777680;
+  --armix-outline-variant: #C7C5D0;
 
-    .card-image {
-      position: relative;
-      overflow: hidden;
-    }
+  /* Surface Containers */
+  --armix-surface-container: #F2F0F4;
+  --armix-surface-container-high: #ECEAEE;
+  --armix-surface-container-highest: #E6E1E9;
+}
 
-    .card-image img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .card:hover .card-image img {
-      transform: scale(1.05);
-    }
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--armix-background);
+  color: var(--armix-on-background);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
 
-    .card-title {
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      padding: 24px !important;
-      font-weight: 500 !important;
-      font-size: 1.5rem !important;
-    }
+.armix-nav {
+  background: linear-gradient(135deg, var(--armix-primary) 0%, var(--armix-secondary) 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  height: 64px;
+}
 
-    /* Badge de precio */
-    .price-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: #ff6f00; /* Deep Orange Material Design */
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 500;
-      font-size: 1.2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      z-index: 1;
-    }
+.armix-nav .brand-logo {
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  padding-left: 20px;
+}
 
-    /* Botón de favoritos */
-    .favorite-btn {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: white;
-      color: #e91e63; /* Pink Material Design */
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      z-index: 1;
-    }
+.armix-nav ul li a {
+  transition: background-color 0.3s ease;
+}
 
-    .favorite-btn:hover {
-      transform: scale(1.1);
-      background: #e91e63;
-      color: white;
-    }
+.armix-nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
-    .favorite-btn.active {
-      background: #e91e63;
-      color: white;
-      animation: heartBeat 0.3s ease;
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
 
-    @keyframes heartBeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-    }
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--armix-primary);
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
 
-    .card-content {
-      padding: 20px !important;
-    }
+.section-subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--armix-on-surface-variant);
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .card-content p {
-      color: #616161; /* Grey 700 Material Design */
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
+/* ===== TARJETA PRINCIPAL ARMIX ===== */
+.armix-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--armix-surface);
+}
 
-    .product-features {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
+.armix-card:hover {
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 16px 32px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
 
-    .feature-chip {
-      background: #e3f2fd; /* Blue 50 Material Design */
-      color: #1976d2; /* Blue 700 Material Design */
-      padding: 5px 12px;
-      border-radius: 16px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
+.armix-card .card-image {
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+}
 
-    /* ===== ACCIONES DE LA TARJETA ===== */
-    .card-action {
-      padding: 16px 20px !important;
-      background: #fafafa;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+.armix-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    /* Contador de cantidad */
-    .quantity-control {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: white;
-      border-radius: 25px;
-      padding: 5px 10px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-      flex-shrink: 0;
-    }
+.armix-card:hover .card-image img {
+  transform: scale(1.05);
+}
 
-    .quantity-btn {
-      background: #6200ea;
-      color: white;
-      border: none;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      font-size: 18px;
-    }
+.armix-card .card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
 
-    .quantity-btn:hover {
-      background: #3700b3;
-      transform: scale(1.1);
-    }
+.category-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: var(--armix-tertiary);
+  color: var(--armix-on-tertiary);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
 
-    .quantity-display {
-      min-width: 30px;
-      text-align: center;
-      font-weight: 500;
-      color: #6200ea;
-    }
+.favorite-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  background-color: var(--armix-surface);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
 
-    /* Botón principal */
-    .btn-add-cart {
-      background: #6200ea !important;
-      border-radius: 25px !important;
-      padding: 0 20px !important;
-      font-weight: 500 !important;
-      text-transform: none !important;
-      box-shadow: 0 2px 5px rgba(98,0,234,0.3) !important;
-      transition: all 0.3s ease !important;
-      white-space: nowrap;
-      flex: 1 1 auto;
-      min-width: 120px;
-      max-width: 160px;
-      height: 36px;
-      line-height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.favorite-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-    .btn-add-cart:hover {
-      background: #3700b3 !important;
-      box-shadow: 0 4px 8px rgba(98,0,234,0.4) !important;
-      transform: translateY(-2px);
-    }
+.favorite-btn i {
+  color: var(--armix-on-surface-variant);
+  transition: all 0.3s ease;
+}
 
-    .btn-add-cart i {
-      margin-right: 5px;
-    }
+.favorite-btn.active {
+  background-color: var(--armix-error);
+}
+
+.favorite-btn.active i {
+  color: var(--armix-on-error);
+}
+
+/* ===== CONTENIDO DE LA TARJETA ===== */
+.armix-card .card-content {
+  padding: 32px;
+}
+
+.product-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--armix-on-surface);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: var(--armix-on-surface-variant);
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.product-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background-color: var(--armix-surface-container);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background-color: var(--armix-primary-container);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.feature-item i {
+  color: var(--armix-primary);
+  font-size: 32px;
+}
+
+.feature-item span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--armix-on-surface);
+  text-align: center;
+}
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tech-chip {
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tech-chip:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.primary-chip {
+  background-color: var(--armix-primary-container);
+  color: var(--armix-on-primary-container);
+}
+
+.secondary-chip {
+  background-color: var(--armix-secondary-container);
+  color: var(--armix-on-secondary-container);
+}
+
+.tertiary-chip {
+  background-color: var(--armix-tertiary-container);
+  color: var(--armix-on-tertiary-container);
+}
+
+.success-chip {
+  background-color: var(--armix-success-container);
+  color: var(--armix-on-success-container);
+}
+
+.armix-card .card-action {
+  padding: 24px 32px;
+  background-color: var(--armix-surface-container);
+  border-top: none;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: var(--armix-primary);
+  color: var(--armix-on-primary);
+  border-radius: 8px;
+  font-weight: 500;
+  text-transform: none;
+  font-size: 1rem;
+  padding: 0 24px;
+  height: 48px;
+  line-height: 48px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2d4ed4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--armix-secondary);
+  color: var(--armix-on-secondary);
+  border-radius: 8px;
+  font-weight: 500;
+  text-transform: none;
+  font-size: 1rem;
+  padding: 0 24px;
+  height: 48px;
+  line-height: 48px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #0096b8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.additional-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.link-text {
+  color: var(--armix-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.link-text:hover {
+  color: var(--armix-secondary);
+  gap: 8px;
+}
+
+.info-cards {
+  margin-top: 60px;
+}
+
+.info-card {
+  background-color: var(--armix-surface);
+  padding: 32px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.info-card i {
+  color: var(--armix-primary);
+  margin-bottom: 16px;
+}
+
+.info-card h6 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--armix-on-surface);
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  color: var(--armix-on-surface-variant);
+  margin: 0;
+}
 
 
-    /* Tablets y pantallas medianas */
-    @media only screen and (max-width: 992px) {
-      .btn-add-cart {
-        min-width: 110px;
-        max-width: 140px;
-        font-size: 0.9rem;
-        padding: 0 15px !important;
-      }
-    }
+/* Tablets (pantallas medianas) */
+@media only screen and (max-width: 992px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
 
-    /* Móviles */
-    @media only screen and (max-width: 600px) {
-      .section-title {
-        font-size: 2rem;
-      }
+  .armix-card .card-image {
+    height: 280px;
+  }
 
-      .card-action {
-        flex-direction: column;
-        gap: 15px;
-      }
+  .armix-card .card-content {
+    padding: 24px;
+  }
 
-      .btn-add-cart {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: auto !important;
-      }
+  .product-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-      .quantity-control {
-        width: 100%;
-        justify-content: center;
-      }
-    }
+  .action-buttons {
+    flex-direction: column;
+  }
 
-    #toast-container {
-      top: auto !important;
-      right: auto !important;
-      bottom: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
 
-    .toast {
-      border-radius: 25px !important;
-      font-weight: 500 !important;
-    }
+/* Móviles (pantallas pequeñas) */
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .armix-nav .brand-logo {
+    font-size: 1.4rem;
+    padding-left: 12px;
+  }
+
+  .armix-card .card-image {
+    height: 240px;
+  }
+
+  .armix-card .card-title {
+    font-size: 1.4rem;
+    padding: 16px;
+  }
+
+  .armix-card .card-content {
+    padding: 20px;
+  }
+
+  .product-name {
+    font-size: 1.2rem;
+  }
+
+  .product-description {
+    font-size: 0.95rem;
+  }
+
+  .product-features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-item {
+    padding: 12px;
+  }
+
+  .tech-chips {
+    justify-content: center;
+  }
+
+  .pricing-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .price-value {
+    font-size: 2rem;
+  }
+
+  .armix-card .card-action {
+    padding: 20px;
+  }
+
+  .category-badge,
+  .favorite-btn {
+    top: 12px;
+  }
+
+  .category-badge {
+    left: 12px;
+  }
+
+  .favorite-btn {
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.armix-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+.favorite-btn.active {
+  animation: heartBeat 0.3s ease;
+}
+
+.btn-primary:focus,
+.btn-secondary:focus,
+.favorite-btn:focus,
+.link-text:focus {
+  outline: 2px solid var(--armix-primary);
+  outline-offset: 2px;
+}
+
+.elevation-1 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.elevation-2 {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.elevation-3 {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.elevation-4 {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast {
+  border-radius: 25px !important;
+  font-weight: 500 !important;
+}
